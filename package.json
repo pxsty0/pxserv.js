@@ -24,8 +24,7 @@
   "homepage": "https://docs.pxserv.net/en/javascript-typescript-library",
   "dependencies": {
     "@types/node-fetch": "^2.6.11",
-    "node-fetch": "^2.7.0",
-    "pxserv": "^1.2.0"
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
