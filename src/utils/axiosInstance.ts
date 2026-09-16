@@ -7,7 +7,6 @@ export default function createAxiosInstance(config: Config): AxiosInstance {
     headers: {
       "Content-Type": "application/json",
     },
-    validateStatus: () => true,
   });
 
   instance.interceptors.request.use((req) => {
