@@ -1,19 +1,18 @@
 import { AxiosInstance } from "axios";
-import { PxServResult } from "../types/result";
+import { DatabaseData } from "../types/database";
 
 export default async function getAll(
   client: AxiosInstance,
-): Promise<PxServResult> {
+): Promise<DatabaseData> {
   try {
     const response = await client.get(`/database/getAll`);
-    const data = response.data;
-
-    return {
-      status: response.status,
-      message: data["message"],
-      data: data["data"],
-    };
+    return response.data.data;
   } catch (err: any) {
-    throw new Error(`Error sending PxServ request: ${err.toString()}`);
+    if (err.response && err.response.data && err.response.data.message) {
+      throw new Error(err.response.data.message);
+    }
+    throw new Error(
+      `Error sending PxServ request: ${err.message || err.toString()}`,
+    );
   }
 }
