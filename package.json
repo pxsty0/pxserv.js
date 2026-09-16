@@ -23,8 +23,7 @@
   },
   "homepage": "https://docs.pxserv.net/en/javascript-typescript-library",
   "dependencies": {
-    "@types/node-fetch": "^2.6.11",
-    "node-fetch": "^2.7.0"
+    "axios": "^1.20.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
